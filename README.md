@@ -1,8 +1,10 @@
 # Alex ATM
 Dynamic ATM application that follows the MVC design pattern. 
-## Technologies used
+## Technologies
 -Frontend: React with Vite
+
 -Backend: PHP for creating APIs
+
 -MySQL database
 # Run the app
 To start the application, navigate to the frontend directory and run the command npm run dev.
