@@ -6,10 +6,7 @@ header('Access-Control-Allow-Origin: *');
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 header('Access-Control-Allow-Headers: Content-Type');
 header('Access-Control-Allow-Credentials: true');
-header('Set-Cookie: PHPSESSID=' . session_id() . '; path=/; HttpOnly');
-header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
-header('Expires: 0');
-header('Content-Type: application/json');
+
 
 if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
     http_response_code(200);
@@ -59,7 +56,6 @@ try {
         if (isset($decoded['card_number'])) {
             $userCardController = new UserCardController(); 
             $userCardController->checkCard($decoded['card_number']);
-            //echo json_encode($userCardController);
         } else {
             echo json_encode(['success' => false, 'message' => 'Missing card number']);
         }
